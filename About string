@@ -1,1 +1,26 @@
 
+vector<string> split(string s, string divid) {            //s="123-456+789" divid ="+-"   ->   v = {"123","456","789"}
+	vector<string> v;
+	char* c = strtok((char*)s.c_str(), divid.c_str());
+	while (c) {
+		v.push_back(c);
+		c = strtok(NULL, divid.c_str());
+
+	}
+	return v;
+}
+
+vector<string> split2(string s, string divid) {  //	s = "123+=456+789+=2222-55555+=77+=8888" , divid = "+=" v = {"123","=456+789","=2222-55555","=77","=8888"}
+
+	vector<string> v;
+	int start = 0;
+	int d = s.find(divid);
+	while (d != -1) {
+		v.push_back(s.substr(start, d - start));
+		start = d + 1;
+		d = s.find(divid, start);
+	}
+	v.push_back(s.substr(start, d - start));
+
+	return v;
+}
