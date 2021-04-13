@@ -1,3 +1,9 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <string>
+#include <cstring>
+#include <vector>
+using namespace std;
 
 vector<string> split(string s, string divid) {            //s="123-456+789" divid ="+-"   ->   v = {"123","456","789"}
 	vector<string> v;
