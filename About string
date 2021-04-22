@@ -33,3 +33,11 @@ vector<string> split2(string s, string divid) {  //	s = "123+=456+789+=2222-5555
 /////////////////////////////////////////////////////////////////////////////////////////
 string str = "12345abcd789";
 int  i = stoi(str); //i = 12345
+
+
+/////////////////////////////////
+#include <sstream>
+string strnum = "123";
+int tmp = 0;
+stringstream ssint(strnum.front());
+ssint >> tmp; // tmp = 123
